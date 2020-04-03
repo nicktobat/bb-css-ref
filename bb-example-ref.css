@@ -2754,25 +2754,25 @@ svg.material-icons:not(:last-child) {
 --------------------  ****/
 /** headings **/
 h1 {
-  font-size: 32rem;
+  font-size: 32px;
   font-weight: 300;
   color: #062a37;
 }
 
 h2 {
-  font-size: 20rem;
+  font-size: 20px;
   font-weight: 300;
   color: #062a37;
 }
 
 h3 {
-  font-size: 20rem;
+  font-size: 20px;
   font-weight: 300;
   color: #8596a4;
 }
 
 h4 {
-  font-size: 14rem;
+  font-size: 14px;
   font-weight: 500;
   color: #8596a4;
 }
@@ -2824,7 +2824,7 @@ mat-form-field.mat-form-field.mat-focused div.mat-form-field-outline {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  font-size: 14rem;
+  font-size: 14px;
   color: #8596a4;
 }
 
@@ -2839,7 +2839,7 @@ mat-form-field.mat-form-field-disabled:hover div.mat-form-field-outline {
 mat-hint.assistive-text {
   display: block;
   color: #8596a4;
-  font-size: 12rem;
+  font-size: 12px;
   letter-spacing: 0.4px;
   margin: 4px 0 0 16px;
 }
@@ -2909,25 +2909,25 @@ svg.material-icons:not(:last-child) {
 --------------------  ****/
 /** headings **/
 h1 {
-  font-size: 32rem;
+  font-size: 32px;
   font-weight: 300;
   color: #062a37;
 }
 
 h2 {
-  font-size: 20rem;
+  font-size: 20px;
   font-weight: 300;
   color: #062a37;
 }
 
 h3 {
-  font-size: 20rem;
+  font-size: 20px;
   font-weight: 300;
   color: #8596a4;
 }
 
 h4 {
-  font-size: 14rem;
+  font-size: 14px;
   font-weight: 500;
   color: #8596a4;
 }
@@ -2979,7 +2979,7 @@ mat-form-field.mat-form-field.mat-focused div.mat-form-field-outline {
 }
 
 .mat-form-field-appearance-legacy .mat-form-field-label {
-  font-size: 14rem;
+  font-size: 14px;
   color: #8596a4;
 }
 
@@ -2994,7 +2994,7 @@ mat-form-field.mat-form-field-disabled:hover div.mat-form-field-outline {
 mat-hint.assistive-text {
   display: block;
   color: #8596a4;
-  font-size: 12rem;
+  font-size: 12px;
   letter-spacing: 0.4px;
   margin: 4px 0 0 16px;
 }
@@ -3183,7 +3183,7 @@ div.example-viewer div.ev-code-view div.ev-code-view-row {
 
 button.mat-flat-button, button.mat-stroked-button, button.mat-button {
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  font-size: 14rem;
+  font-size: 14px;
   letter-spacing: 0;
   font-weight: 500;
   line-height: 48px;
