@@ -1,0 +1,383 @@
+@import './bb-theme.scss';
+
+/****  --------------------
+-----  GLOBAL STYLES  -----
+--------------------  ****/
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $color-neutral-00; box-sizing: border-box; }
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+svg.material-icons {
+    height: 24px;
+    width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+}
+
+.item-group > * {
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+.item-group-16 > * {
+  &:not(:last-child) {
+      margin-right: 16px;
+  }
+}
+
+/****  --------------------
+-----  TYPOGRAPHY     -----
+--------------------  ****/
+
+/** headings **/
+@mixin h1() {
+  font-size: $size-font-xl;
+  font-weight: $weight-font-light;
+  color: $color-font-primary;
+}
+@mixin h2() {
+  font-size: $size-font-l;
+  font-weight: $weight-font-light;
+  color: $color-font-primary;
+}
+@mixin h3() {
+  font-size: $size-font-l;
+  font-weight: $weight-font-light;
+  color: $color-font-secondary;
+}
+@mixin h4() {
+  font-size: $size-font-s;
+  font-weight: $weight-font-medium;
+  color: $color-font-secondary;
+}
+
+h1{
+  @include h1;
+}
+h2{
+  @include h2;
+}
+h3{
+  @include h3;
+}
+h4{
+  @include h4;
+}
+
+
+/****  --------------------
+-----  MAT OVERRIDES  -----
+--------------------  ****/
+
+div.mat-simple-snackbar-action button.mat-button {
+  line-height: 36px;
+}
+snack-bar-container.mat-snack-bar-container {
+  .mat-simple-snackbar-action {
+    color: $color-brand-blue-primary;
+  }
+}
+
+button.mat-icon-button mat-icon.mat-icon {
+  line-height: 22px;
+}
+
+mat-icon.mat-icon {
+    color: $color-icon-default;
+    cursor: pointer;
+}
+
+mat-chip.mat-chip-with-leading-icon mat-icon.mat-icon:not(.mat-chip-trailing-icon) {
+    margin-left: -8px;
+    padding-right: 8px;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove {
+    color: $color-icon-default;
+    opacity: 1;
+}
+
+.mat-form-field-underline {
+    background-color: $color-neutral-02 !important;
+}
+.mat-form-field-outline {
+    color: $color-neutral-02 !important;
+}
+mat-form-field.mat-form-field {
+    &:hover {
+        div.mat-form-field-outline {
+            color: $color-brand-blue-primary !important;
+        }
+    }
+    &.mat-focused {
+        div.mat-form-field-outline {
+            color: $color-brand-blue-primary !important;
+        }
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    font-size: $size-font-s;
+    color: $color-font-secondary;
+}
+
+mat-form-field.mat-form-field-disabled {
+  div.mat-form-field-outline {
+    color: $color-icon-disabled !important;
+  }
+  &:hover {
+    div.mat-form-field-outline {
+        color: $color-icon-disabled !important;
+    }
+  }
+}
+
+mat-hint.assistive-text {
+    display: block;
+    color: $color-font-secondary;
+    font-size: $size-font-xs;
+    letter-spacing: 0.4px;
+    margin: 4px 0 0 16px;
+}
+
+.mat-menu-panel {
+    margin-top: 2px;
+}
+
+button.mat-menu-item {
+    color: $color-font-primary;
+    text-transform: capitalize;
+}
+
+mat-divider {
+    width: 100%;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $color-brand-blue-primary;
+}
+
+mat-sidenav-container.mat-drawer-container {
+    height: 100%;
+}
+
+
+
+/****  --------------------
+-----  COMPONENTS     -----
+--------------------  ****/
+
+main {
+  margin: 24px;
+}
+
+/*** Example Viewer ***/
+div.example-viewer {
+  max-width: 1080px;
+  margin: 0 auto;
+  border-radius: 6px;
+  background-color: $color-brand-light-primary;
+  box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.2);
+
+  div.ev-title {
+    height: 48px;
+    background-color: $color-neutral-01;
+    border-radius: 6px 6px 0 0;
+    border-bottom: $color-neutral-02;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    .component-name {
+      line-height: 48px;
+      margin: 0 16px;
+    }
+    div.ev-icon-group {
+      margin: 0 16px;
+      .mat-icon-button .mat-icon {
+        line-height: 20px;
+      }
+      .mat-icon-button:hover .mat-icon {
+        color: $color-icon-active;
+      }
+    }
+  }
+
+  div.ev-component-view {
+    padding: 32px;
+    mat-form-field.mat-form-field {
+      width: 360px;
+    }
+
+    // add box-shadow to Action Bar examples
+    div.actionbar {
+      box-shadow: inset 0 1px 0 0 $color-neutral-02, 0 4px 12px rgba(37,44,58,0.12);
+    }
+  }
+
+  div.ev-component-view.ev-multiple {
+    display: flex;
+    flex: row wrap;
+    > * {
+      margin-right: 40px;
+    }
+  }
+
+  div.ev-code-view {
+    border-radius: 0 0 4px 4px;
+    background-color: $color-neutral-00;
+    box-shadow: 0 1px 2px rgba($color: #000000, $alpha: 0.08);
+
+    h4 {
+      margin: 0;
+      padding: 0 32px;
+    }
+    
+    pre.hljs {
+      font-family: 'Roboto Mono';
+      font-size: 12px;
+      margin: 0;
+      padding: 8px 24px;
+      white-space: pre-wrap;
+      background: $color-neutral-00;
+      .hljs-tag {
+        display: inline-block;
+        margin: 2px 0;
+      }
+    }
+    
+    mat-tab-body.mat-tab-body {
+      padding: 16px 0 0 0;
+    }
+    
+    div.ev-code-block {
+      margin: 8px 0;
+      padding: 8px 0;
+      &:hover {
+        box-shadow: 0 2px 2px rgba($color: #000000, $alpha: 0.12);
+        background-color: $color-brand-light-primary;
+        h4 {
+          color: $color-font-primary;
+        }
+        pre.hljs {
+          background-color: $color-brand-light-primary;
+        }
+      }
+    }
+
+    div.ev-code-title-row {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 32px;
+      cursor: pointer;
+      h4 {
+        margin: 0;
+        padding: 0 8px;
+      }
+      .mat-icon-button:hover .mat-icon {
+        color: $color-icon-active;
+      }
+    }
+
+    div.ev-code-view-row {
+      max-width: 100%;
+      padding: 8px;
+      margin: 0 0 8px 0;
+      border-radius: 4px;
+    }
+  }
+}
+
+
+@mixin button() {
+  font-family: $button-global-font-family;
+  font-size: $button-global-font-size;
+  letter-spacing: $button-global-letter-spacing;
+  font-weight: $button-global-font-weight;
+  line-height: $button-global-line-height;
+  text-align: $button-global-text-align;
+  height: $button-global-height;
+  padding: $button-global-padding;
+  min-width: $button-global-min-width;
+  text-transform: $button-global-text-transform;
+  border-radius: $button-global-border-radius;
+}
+@mixin button-primary() {
+  color: $button-primary-font-color;
+  background-color: $button-primary-background-color;
+}
+@mixin button-secondary() {
+  color: $button-secondary-font-color;
+  background-color: $button-secondary-background-color;
+  padding: $button-secondary-padding;
+}
+@mixin button-tertiary() {
+  color: $button-tertiary-font-color;
+  background-color: $button-tertiary-background-color;
+}
+@mixin button-outlined() {
+  color: $button-outlined-font-color;
+  line-height: $button-outlined-line-height;
+  background-color: $button-outlined-background-color;
+  border-width: $button-outlined-border-width;
+  border-color: $button-outlined-border-color;
+}
+@mixin button-disabled() {
+  color: $button-disabled-font-color;
+  background-color: $button-disabled-background-color;
+  cursor: default;
+}
+@mixin button-icon() {
+  line-height: $button-icon-line-height;
+  text-align: $button-icon-text-align;
+  height: $button-icon-height;
+  padding: $button-icon-padding;
+  color: $button-icon-color;
+  display: flex;
+  align-items: center;
+  mat-icon.mat-icon {
+    color: $button-icon-color;
+    margin-right: $button-icon-margin;
+    line-height: 20px;
+  }
+  &:hover {
+    background-color: $color-brand-blue-secondary;
+  }
+}
+
+button.mat-flat-button, button.mat-stroked-button, button.mat-button /*:not(button.toolbar-button):not(button.mat-icon-button)*/ {
+  @include button;
+}
+button.button-primary {
+  @include button-primary;
+  &.button-positive {
+    background-color: $color-positive-primary;
+  }
+}
+button.button-secondary {
+  @include button-secondary;
+}
+button.button-tertiary {
+  @include button-tertiary;
+}
+button.mat-stroked-button.button-outlined {
+  @include button-outlined;
+}
+button.button-disabled {
+  @include button-disabled;
+}
+button.button-icon {
+  @include button-icon;
+}
