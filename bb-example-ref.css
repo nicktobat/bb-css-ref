@@ -3097,4 +3097,69 @@ button.button-icon mat-icon.mat-icon {
 button.button-icon:hover {
   background-color: rgba(0, 85, 255, 0.04);
 }
+
+/******************************************************************************************************
+------------------------------------------------------------------------------------------------------
+******************************************************************************************************/
+/*** Chip ***/
+mat-chip, mat-chip.mat-chip.mat-standard-chip {
+  color: #062a37;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  height: 32px;
+  background-color: #ffffff;
+  border-color: #d1d8de;
+  border-width: 1px;
+  border-radius: 16px;
+  border-style: solid;
+}
+
+mat-chip::after, mat-chip.mat-chip.mat-standard-chip::after {
+  background-color: rgba(6, 42, 55, 0.56);
+}
+
+mat-chip:hover::after, mat-chip.mat-chip.mat-standard-chip:hover::after {
+  background-color: rgba(6, 42, 55, 0.56);
+}
+
+mat-chip:focus::after, mat-chip.mat-chip.mat-standard-chip:focus::after {
+  background-color: rgba(6, 42, 55, 0.56);
+  opacity: 0.12;
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-hover-example::after {
+  background-color: rgba(6, 42, 55, 0.56);
+  opacity: 0.12;
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-activated-example, mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected {
+  border-color: #0055ff;
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-activated-example::after, mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected::after {
+  background-color: rgba(0, 85, 255, 0.04);
+  opacity: 0.12;
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-activated-example mat-icon.mat-icon:not(.mat-chip-trailing-icon), mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected mat-icon.mat-icon:not(.mat-chip-trailing-icon) {
+  color: #0055ff;
+}
+
+mat-chip.mat-chip.mat-standard-chip.mat-chip-disabled {
+  opacity: 1;
+  color: #d1d8de;
+  border-color: #eef2f5;
+}
+
+mat-chip.mat-chip.mat-standard-chip.mat-chip-disabled mat-icon.mat-icon {
+  color: #eef2f5;
+}
+
+mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected {
+  background-color: #ffffff;
+  color: #062a37;
+  border-color: #0055ff;
+}
 /*# sourceMappingURL=bb-example-ref.css.map */

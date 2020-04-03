@@ -208,3 +208,75 @@ button.button-disabled {
 button.button-icon {
   @include button-icon;
 }
+
+
+/******************************************************************************************************
+------------------------------------------------------------------------------------------------------
+******************************************************************************************************/
+
+/*** Chip ***/
+@mixin chip() {
+  color: $chip-global-color;
+  font-family: $chip-global-font-family;
+  font-size: $chip-global-font-size;
+  font-weight: $chip-global-font-weight;
+  text-align: $chip-global-text-align;
+  height: $chip-global-height;
+  background-color: $chip-global-background-color;
+  border-color: $chip-global-border-color;
+  border-width: $chip-global-border-width;
+  border-radius: $chip-global-border-radius;
+  border-style: $chip-global-border-style;
+}
+
+mat-chip, mat-chip.mat-chip.mat-standard-chip {
+  @include chip;
+
+  &::after{
+      background-color: $color-brand-dark-secondary;
+  }
+
+  &:hover::after {
+      background-color: $color-brand-dark-secondary;
+  }
+  &:focus::after{
+      background-color: $color-brand-dark-secondary;
+      opacity: 0.12;
+  }
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-hover-example {
+  &::after{
+      background-color: $color-brand-dark-secondary;
+      opacity: 0.12;
+  }
+}
+
+mat-chip.mat-chip.mat-standard-chip.chip-activated-example, mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected {
+  border-color: $color-brand-blue-primary;
+
+  &::after {
+      background-color: $color-brand-blue-secondary;
+      opacity: 0.12;
+  }
+
+  mat-icon.mat-icon:not(.mat-chip-trailing-icon) {
+      color: $color-icon-active;
+  }
+}
+
+mat-chip.mat-chip.mat-standard-chip.mat-chip-disabled {
+  opacity: 1;
+  color: $color-font-disabled;
+  border-color: $color-neutral-01;
+
+  mat-icon.mat-icon {
+      color: $color-icon-disabled;
+  }
+}
+
+mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected {
+  background-color: $color-brand-light-primary;
+  color: $color-font-primary;
+  border-color: $color-brand-blue-primary;
+}
