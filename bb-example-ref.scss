@@ -1,4 +1,183 @@
 @import './bb-theme.scss';
+@import 'StyleDictionary/build/scss/variables';
+
+
+
+/****  --------------------
+-----  GLOBAL STYLES  -----
+--------------------  ****/
+
+html, body { height: 100%; }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: $color-neutral-00; box-sizing: border-box; }
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+svg.material-icons {
+    height: 24px;
+    width: auto;
+}
+
+svg.material-icons:not(:last-child) {
+    margin-right: 8px;
+}
+
+.item-group > * {
+    &:not(:last-child) {
+        margin-right: 8px;
+    }
+}
+.item-group-16 > * {
+  &:not(:last-child) {
+      margin-right: 16px;
+  }
+}
+
+
+
+/****  --------------------
+-----  TYPOGRAPHY     -----
+--------------------  ****/
+
+/** headings **/
+@mixin h1() {
+  font-size: $size-font-xl;
+  font-weight: $weight-font-light;
+  color: $color-font-primary;
+}
+@mixin h2() {
+  font-size: $size-font-l;
+  font-weight: $weight-font-light;
+  color: $color-font-primary;
+}
+@mixin h3() {
+  font-size: $size-font-l;
+  font-weight: $weight-font-light;
+  color: $color-font-secondary;
+}
+@mixin h4() {
+  font-size: $size-font-s;
+  font-weight: $weight-font-medium;
+  color: $color-font-secondary;
+}
+
+h1{
+  @include h1;
+}
+h2{
+  @include h2;
+}
+h3{
+  @include h3;
+}
+h4{
+  @include h4;
+}
+
+
+
+/****  --------------------
+-----  MAT OVERRIDES  -----
+--------------------  ****/
+
+div.mat-simple-snackbar-action button.mat-button {
+  line-height: 36px;
+}
+snack-bar-container.mat-snack-bar-container {
+  .mat-simple-snackbar-action {
+    color: $color-brand-blue-primary;
+  }
+}
+
+button.mat-icon-button mat-icon.mat-icon {
+  line-height: 22px;
+}
+
+mat-icon.mat-icon {
+    color: $color-icon-default;
+    cursor: pointer;
+}
+
+mat-chip.mat-chip-with-leading-icon mat-icon.mat-icon:not(.mat-chip-trailing-icon) {
+    margin-left: -8px;
+    padding-right: 8px;
+}
+
+.mat-chip.mat-standard-chip .mat-chip-remove {
+    color: $color-icon-default;
+    opacity: 1;
+}
+
+.mat-form-field-underline {
+    background-color: $color-neutral-02 !important;
+}
+.mat-form-field-outline {
+    color: $color-neutral-02 !important;
+}
+mat-form-field.mat-form-field {
+    &:hover {
+        div.mat-form-field-outline {
+            color: $color-brand-blue-primary !important;
+        }
+    }
+    &.mat-focused {
+        div.mat-form-field-outline {
+            color: $color-brand-blue-primary !important;
+        }
+    }
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-label {
+    font-size: $size-font-s;
+    color: $color-font-secondary;
+}
+
+mat-form-field.mat-form-field-disabled {
+  div.mat-form-field-outline {
+    color: $color-icon-disabled !important;
+  }
+  &:hover {
+    div.mat-form-field-outline {
+        color: $color-icon-disabled !important;
+    }
+  }
+}
+
+mat-hint.assistive-text {
+    display: block;
+    color: $color-font-secondary;
+    font-size: $size-font-xs;
+    letter-spacing: 0.4px;
+    margin: 4px 0 0 16px;
+}
+
+.mat-menu-panel {
+    margin-top: 2px;
+}
+
+button.mat-menu-item {
+    color: $color-font-primary;
+    text-transform: capitalize;
+}
+
+mat-divider {
+    width: 100%;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $color-brand-blue-primary;
+}
+
+mat-sidenav-container.mat-drawer-container {
+    height: 100%;
+}
+
+
 
 /****  --------------------
 -----  COMPONENTS     -----
@@ -70,7 +249,12 @@ div.example-viewer {
       margin: 0;
       padding: 0 32px;
     }
-    
+
+    div.mat-tab-body-content {
+      pre {
+        margin: 0;
+      }
+    }
     pre.hljs {
       font-family: 'Roboto Mono';
       font-size: 12px;
@@ -82,10 +266,6 @@ div.example-viewer {
         display: inline-block;
         margin: 2px 0;
       }
-    }
-    
-    mat-tab-body.mat-tab-body {
-      padding: 16px 0 0 0;
     }
     
     div.ev-code-block {
@@ -127,6 +307,11 @@ div.example-viewer {
   }
 }
 
+
+
+/******************************************************************************************************
+/*** Button ***
+******************************************************************************************************/
 
 @mixin button() {
   font-family: $button-global-font-family;
@@ -210,11 +395,11 @@ button.button-icon {
 }
 
 
+
 /******************************************************************************************************
-------------------------------------------------------------------------------------------------------
+/*** Chip ***
 ******************************************************************************************************/
 
-/*** Chip ***/
 @mixin chip() {
   color: $chip-global-color;
   font-family: $chip-global-font-family;
@@ -280,3 +465,568 @@ mat-chip.mat-chip.mat-standard-chip.mat-primary.mat-chip-selected {
   color: $color-font-primary;
   border-color: $color-brand-blue-primary;
 }
+
+
+
+/******************************************************************************************************
+/*** Toolbar Button ***
+******************************************************************************************************/
+
+@mixin toolbar-button() {
+  font-family: $button-global-font-family;
+  font-size: $button-toolbar-font-size;
+  letter-spacing: $button-global-letter-spacing;
+  font-weight: $button-toolbar-font-weight;
+  line-height: $button-global-line-height;
+  color: $color-font-secondary;
+  text-align: $button-global-text-align;
+  height: $button-global-height;
+  padding: $button-toolbar-padding;
+  min-width: $button-toolbar-min-width !important;
+  text-transform: $button-toolbar-text-transform;
+  border-radius: $button-toolbar-border-radius;
+  box-shadow: $button-toolbar-box-shadow;
+  /* box shadow lines extending above toolbar button bounds, so: */
+  overflow: hidden;
+}
+
+button.toolbar-button {
+  @include toolbar-button;
+  
+  &.toolbar-button-pivot {
+    padding-left: $button-toolbar-pivot-padding-left;
+  }
+  .tb-icon {
+    margin-top: $button-toolbar-icon-margin-top;
+    padding: $button-toolbar-icon-padding;
+
+    &.tb-icon--left {
+      box-shadow: $button-toolbar-icon-border-right;
+      margin-right: $button-toolbar-icon-margin-right;
+    }
+    &.tb-icon--right {
+      box-shadow: $button-toolbar-icon-border-left;
+      margin-left: $button-toolbar-icon-margin-left;
+    }
+  }
+
+  .mat-button-focus-overlay {
+    background-color: transparent;
+  }
+}
+
+
+
+/******************************************************************************************************
+/*** Search ***
+******************************************************************************************************/
+
+div.toolbar-button { // search bar
+  @include toolbar-button;
+
+  display: flex;
+  flex-flow: row nowrap;
+  box-sizing: border-box;
+  text-align: left;
+  background-color: $color-neutral-00;
+
+  // for some reason the matInput is not working right; works in Component Library but not here... WHY!Y!!Y!!YYYY!
+  // so the following code is to make the input fit into the search bar correctly ...
+  .mat-input-element {
+    width: 100%;
+    border: 0;
+    background-color: unset;
+    height: 46px;
+    margin-top: 1px;
+    padding: 0;
+    font-size: 16px;
+    font-family: Roboto;
+  }
+
+  &:focus, &:active, &:hover {
+    box-shadow: inset 0 0 0 1px $color-brand-blue-primary !important;
+  }
+
+  .mat-input-element:focus {
+    color: $color-font-primary;
+    outline: none;
+  }
+
+  > .mat-icon {
+    padding: 12px 12px 11px 12px;
+    &:hover {
+      cursor: default;
+    }
+  }
+
+  .toolbar-button-search-dropdown {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-left: 16px;
+    background-color: $color-brand-light-primary;
+    height: 46px;
+    margin: 1px;
+    min-width: 15%;
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid $color-neutral-02;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: $color-neutral-00;
+    }
+    .mat-icon {
+      padding: 11px 12px 11px 12px;
+    }
+  }
+}
+
+@mixin search() {
+  display: $search-display;
+  background-color: $search-background-color;
+  border-radius: $search-border-radius;
+  border: $search-border-width $search-border-style $search-border-color;
+  .mat-input-element {
+    font-family: Roboto;
+    font-size: $search-font-size;
+    font-weight: $search-font-weight;
+    width: 100%;
+    border: 0;
+    background: unset;
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover {
+    border-color: $color-brand-blue-primary;
+  }
+  &:focus {
+    box-shadow: inset 0 0 0 1px $color-brand-blue-primary;
+  }
+}
+@mixin search-input {
+  height: $search-input-height;
+  line-height: $search-input-line-height;
+  mat-icon.mat-icon {
+    padding: $search-input-icon-padding;
+  }
+}
+@mixin search-toolbar() {
+  height: $search-toolbar-height;
+  line-height: $search-toolbar-line-height;
+  mat-icon.mat-icon {
+    padding: $search-toolbar-icon-padding;
+  }
+}
+
+div.search {
+  @include search;
+
+  &.search-input {
+    @include search-input;
+    
+    .mat-input-element {
+      height: $search-input-height;
+      line-height: $search-input-line-height;
+    }
+  }
+
+  &.search-toolbar {
+    @include search-toolbar;
+
+    .mat-input-element {
+      height: $search-toolbar-height;
+      line-height: $search-toolbar-line-height;
+    }
+  }
+}
+
+div.search-active {
+  box-shadow: inset 0 0 0 1px $color-brand-blue-primary;
+  border: 1px solid $color-brand-blue-primary;
+}
+
+
+
+/******************************************************************************************************
+/*** Toolbar ***
+******************************************************************************************************/
+
+.toolbar-bar {
+  display: flex;
+  flex-flow: row nowrap;
+
+  > *:not(:last-child) {
+      margin-right: 16px;
+  }
+
+  .toolbar-button-search {
+      flex-grow: 1;
+  }
+}
+
+/*
+button.toolbar-button-search {
+  padding-left: 16px;
+  text-align: left;
+
+  .mat-icon {
+      margin-top: -1px;
+      margin-right: $spacing-xs;
+  }
+}
+*/
+
+
+
+/******************************************************************************************************
+/*** Avatar ***
+******************************************************************************************************/
+
+@mixin avatar() {
+  height: $avatar-height;
+  width: $avatar-width;
+
+  img {
+    height: $avatar-height;
+    width: $avatar-width;
+    /*border-radius: $avatar-border-radius;*/
+    border: $avatar-border-width $avatar-border-style $avatar-border-color;
+  }
+  &.mat-badge-small.mat-badge-overlap.mat-badge-after span.mat-badge-content {
+    right: $avatar-badge-position;
+  }
+  &.mat-badge-small.mat-badge-below span.mat-badge-content {
+    bottom: $avatar-badge-position;
+  }
+  span.mat-badge-content {
+    height: $avatar-badge-height;
+    width: $avatar-badge-width;
+    line-height: $avatar-badge-line-height;
+    background: $avatar-badge-background;
+    box-shadow: $avatar-badge-box-shadow;
+  }
+}
+
+div.avatar-user {
+  @include avatar;
+
+  img {
+    border-radius: $avatar-border-radius;
+  }
+  &:hover .avatar-hoverlay {
+    display: flex;
+  }
+  .avatar-hoverlay {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: $avatar-height;
+    width: $avatar-width;
+    border-radius: $avatar-border-radius;
+    border: $avatar-border-width $avatar-border-style $avatar-border-color;
+    background-color: rgba(37,44,58,0.9);
+    z-index: 0;
+
+    .mat-checkbox.card-selector {
+      margin-top: -1px;
+    }
+  }
+}
+
+div.avatar-item {
+  @include avatar;
+  
+  img {
+    border-radius: $avatar-item-border-radius;
+    border: $avatar-item-border-border;
+  }
+}
+
+
+
+/******************************************************************************************************
+/*** SKU ***
+******************************************************************************************************/
+
+@mixin sku() {
+  height: $card-product-sku-height;
+  background-color: $card-product-sku-background-color;
+  padding: $card-product-sku-padding;
+  font-size: $card-product-sku-font-size;
+  line-height: $card-product-sku-line-height;
+}
+
+.sku {
+  @include sku;
+}
+
+
+
+/******************************************************************************************************
+/*** CARD ***
+******************************************************************************************************/
+
+@mixin card {
+  background-color: $card-global-background-color;
+  font-family: $card-global-font-family;
+  border-radius: $card-global-border-radius;
+  padding: 0;
+  box-sizing: border-box;
+}
+mat-card.mat-card {
+  @include card;
+
+  .card-actions {
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    > .mat-checkbox.card-selector {
+        padding: 8px;
+        color: $color-icon-white;
+    }
+    > button.mat-icon-button mat-icon.mat-icon {
+      color: $color-icon-white;
+    }
+  }
+}
+
+/** File or Image Card **/
+@mixin card-file {
+  width: $card-file-width;
+  box-shadow: $card-file-box-shadow;
+
+  img {
+      object-fit: cover;
+  }
+  img.mat-card-image {
+      height: $card-file-img-height;
+      width: $card-file-img-height;
+      border-radius: $card-global-border-radius;
+      border: 1px solid $color-neutral-02;
+      margin: $card-file-img-margin;
+  }
+  mat-card-content.mat-card-content {
+      text-align: $card-file-content-text-align;
+      font-size: $card-file-content-font-size;
+      line-height: $card-file-content-line-height;
+
+      > p:last-child {
+          color: $color-font-secondary;
+          font-size: 12px;
+          line-height: 18px;
+      }
+  }
+}
+
+mat-card.mat-card.card-file {
+  @include card-file;
+  cursor: pointer;
+
+  img {
+      object-fit: cover;
+  }
+  &:hover .card-file-img-hoverlay {
+      display: flex;
+      z-index: 99;
+  }
+  &:hover .card-actions {
+      display: flex;
+      z-index: 999;
+  }
+}
+.card-file-img-hoverlay {
+  display: none;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 130px;
+  width: 130px;
+  border-radius: 4px;
+  background-color: rgba(37,44,58,0.9);
+  box-shadow: $card-product-box-shadow;
+
+  button.button-primary {
+      position: absolute;
+      bottom: 16px;
+  }
+}
+
+
+/** product card **/
+@mixin card-product {
+  width: $card-product-width;
+  box-shadow: $card-product-box-shadow;
+
+  img.mat-card-image {
+    object-fit: $card-product-img-fit;
+    height: $card-product-img-height;
+    width: $card-product-img-width;
+    margin: $card-file-img-margin;
+  }
+  mat-card-content.mat-card-content {
+    text-align: $card-product-content-text-align;
+    font-size: $card-product-content-font-size;
+    line-height: $card-product-content-line-height;
+    padding: $card-product-content-padding;
+  }
+  .card-sku {
+    position: $card-product-sku-position;
+    top: $card-product-sku-top;
+    right: $card-product-sku-right;
+    height: $card-product-sku-height;
+    background-color: $card-product-sku-background-color;
+    padding: $card-product-sku-padding;
+    font-size: $card-product-sku-font-size;
+    line-height: $card-product-sku-line-height;
+  }
+}
+mat-card.mat-card.card-product {
+  @include card-product;
+  transition: box-shadow 0ms;
+  
+  .card-product-img-hoverlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 200px;
+    width: 272px;
+    border-radius: 3.25px 3.25px 0 0;
+    background-color: rgba(37,44,58,0.9);
+  }
+  &:hover {
+    box-shadow: $card-product-box-shadow,
+                inset 0 0 0 1px $color-brand-dark-primary !important;
+    cursor: pointer;
+  }
+  &:hover .card-product-img-hoverlay {
+    display: block;
+    z-index: 99;
+  }
+  &:hover .card-actions {
+    display: flex;
+    z-index: 999;
+  }
+  &.checked {
+    box-shadow: 0 2px 4px rgba($color: #0055ff, $alpha: 0.48);
+    .card-product-img-hoverlay {
+      display: block;
+      z-index: 99;
+      background-color: unset;
+      .card-actions {
+        display: flex;
+        button {
+          visibility: hidden;
+        }
+      }
+    }
+    &:hover {
+      .card-product-img-hoverlay {
+        background-color: rgba(37,44,58,0.9);
+      }
+    }
+  }
+}
+
+/** report card **/
+@mixin card-report {
+  width: $card-report-width;
+  box-shadow: $card-report-box-shadow;
+  border: 1px solid $color-neutral-02;
+
+  img.mat-card-image {
+    height: $card-report-img-height;
+    width: $card-report-img-width;
+    margin: $card-file-img-margin;
+    border-radius: $card-report-img-border-radius;
+  }
+  mat-card-content.mat-card-content {
+    text-align: $card-report-content-text-align;
+    font-size: $card-report-content-font-size;
+    line-height: $card-report-content-line-height;
+    padding: $card-report-content-padding;
+
+    > p:not(:first-child) {
+      color: $card-report-metadata-color;
+      font-size: $card-report-metadata-font-size;
+      line-height: $card-report-metadata-line-height;
+    }
+  }
+}
+mat-card.mat-card.card-report {
+  @include card-report;
+
+  .card-report-img-hoverlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 160px;
+    width: 270px;
+    border-radius: 3.25px 3.25px 0 0;
+    background-color: rgba(37,44,58,0.9);
+  }
+  img {
+    object-fit: cover;
+  }
+  &:hover {
+    border: 1px solid $color-brand-dark-primary;
+    cursor: pointer;
+  }
+  &:hover .card-report-img-hoverlay {
+    display: block;
+    z-index: 99;
+  }
+  &:hover .card-actions {
+    display: flex;
+    z-index: 999;
+  }
+  &.checked {
+    border: 1px solid $color-brand-dark-primary;
+    .card-report-img-hoverlay {
+      display: block;
+      z-index: 99;
+      background-color: unset;
+      .card-actions {
+        display: flex;
+        button {
+          visibility: hidden;
+        }
+      }
+    }
+    &:hover {
+      .card-report-img-hoverlay {
+        background-color: rgba(37,44,58,0.9);
+      }
+    }
+  }
+}
+
+.mat-checkbox.card-selector {
+  .mat-checkbox-inner-container {
+    height: 20px;
+    width: 20px;
+  }
+  .mat-checkbox-frame,
+  .mat-checkbox-background {
+    border-color: white !important;
+    border-radius: 50% !important;
+  }
+}
+
+
+.cardMenu {
+  button.mat-menu-item {
+    text-align: left;
+  }
+}
+
+
