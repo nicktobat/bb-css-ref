@@ -1,0 +1,39 @@
+{
+  "toolbar" : {
+    "search" : {
+      "container" : {
+        "height" : { "value" : "{spacing.xl.value}" }
+      },
+      "form" : {
+        "padding" : { "value" : "0" },
+        "line-height" : { "value" : "26px" },
+        "flex-grow" : { "value" : "1" },
+        "border-color" : { "value" : "{color.neutral.02.value}" }
+      },
+      "outline" : {
+        "border-radius" : { "value" : "{spacing.xxxs.value}" },
+        "color" : { "value" : "{color.neutral.00.value}" },
+        "background" : { "value" : "{color.neutral.01.value}" }
+      },
+      "placeholder" : {
+        "color" : { "value" : "{color.neutral.03.value}" }
+      },
+      "matflex" : {
+        "height" : { "value" : "52px" },
+        "padding" : { "value" : "0 {spacing.xxs.value}" }
+      },
+      "matwrapper" : {
+        "width" : { "value" : "100%" },
+        "padding-bottom" : { "value" : "0" },
+        "margin" : { "value" : "0" }
+      },
+      "matinfix" : {
+        "display" : { "value" : "inherit" },
+        "padding" : { "value" : "2px 0" }
+      },
+      "icon" : {
+        "margin" : { "value" : "0 8px 0 0" }
+      }
+    }
+  }
+}

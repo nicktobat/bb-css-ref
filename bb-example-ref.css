@@ -3369,6 +3369,89 @@ div.search-active {
 }
 
 /******************************************************************************************************
+/*** Search v2 ***
+******************************************************************************************************/
+/* @mixin toolbar-search-form() {
+  padding: $toolbar-search-form-padding;
+  line-height: $toolbar-search-form-line-height;
+  flex-grow: $toolbar-search-form-flex-grow;
+  border-color: $toolbar-search-form-border-color;
+}
+@mixin toolbar-search-outline() {
+  border-radius: $toolbar-search-outline-border-radius;
+  color: $toolbar-search-outline-color;
+  background: $toolbar-search-outline-background;
+}
+@mixin toolbar-search-matflex() {
+  height: $toolbar-search-matflex-height;
+  padding: $toolbar-search-matflex-padding;
+}
+@mixin toolbar-search-matwrapper() {
+  width: $toolbar-search-matwrapper-width;
+  padding-bottom: $toolbar-search-matwrapper-padding-bottom;
+  margin: $toolbar-search-matwrapper-margin;
+}
+@mixin toolbar-search-matinfix() {
+  display: $toolbar-search-matinfix-display;
+  padding: $toolbar-search-matinfix-padding;
+  margin: $toolbar-search-matinfix-icon-margin;
+} */
+div.search-container {
+  height: 48px;
+}
+
+div.search-container .mat-form-field.search-form {
+  padding: 0;
+  line-height: 26px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border-color: #d1d8de;
+}
+
+div.search-container .mat-form-field.search-form .mat-form-field-outline {
+  border-radius: 4px;
+  color: #fcfcfd;
+  background: #eef2f5;
+}
+
+div.search-container .mat-form-field.search-form .mat-input-element::-webkit-input-placeholder {
+  color: #8596a4;
+}
+
+div.search-container .mat-form-field.search-form .mat-input-element:-ms-input-placeholder {
+  color: #8596a4;
+}
+
+div.search-container .mat-form-field.search-form .mat-input-element::-ms-input-placeholder {
+  color: #8596a4;
+}
+
+div.search-container .mat-form-field.search-form .mat-input-element::placeholder {
+  color: #8596a4;
+}
+
+div.search-container .mat-form-field.search-form .mat-form-field-flex {
+  height: 52px;
+  padding: 0 8px;
+}
+
+div.search-container .mat-form-field.search-form .mat-form-field-wrapper {
+  width: 100%;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+div.search-container .mat-form-field.search-form .mat-form-field-infix {
+  display: inherit;
+  padding: 2px 0;
+}
+
+div.search-container .mat-form-field.search-form .mat-form-field-infix mat-icon.mat-icon {
+  margin: 0 8px 0 0;
+}
+
+/******************************************************************************************************
 /*** Toolbar ***
 ******************************************************************************************************/
 .toolbar-bar {

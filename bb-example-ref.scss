@@ -649,6 +649,75 @@ div.search-active {
 
 
 /******************************************************************************************************
+/*** Search v2 ***
+******************************************************************************************************/
+
+@mixin toolbar-search() {
+  height: $toolbar-search-container-height;
+  .mat-form-field.search-form {
+    padding: $toolbar-search-form-padding;
+    line-height: $toolbar-search-form-line-height;
+    flex-grow: $toolbar-search-form-flex-grow;
+    border-color: $toolbar-search-form-border-color;
+    .mat-form-field-outline {
+      border-radius: $toolbar-search-outline-border-radius;
+      color: $toolbar-search-outline-color;
+      background: $toolbar-search-outline-background;
+    }
+    .mat-input-element::placeholder {
+      color: $toolbar-search-placeholder-color;
+    }
+    .mat-form-field-flex {
+      height: $toolbar-search-matflex-height;
+      padding: $toolbar-search-matflex-padding;
+    }
+    .mat-form-field-wrapper {
+      width: $toolbar-search-matwrapper-width;
+      padding-bottom: $toolbar-search-matwrapper-padding-bottom;
+      margin: $toolbar-search-matwrapper-margin;
+    }
+    .mat-form-field-infix {
+      display: $toolbar-search-matinfix-display;
+      padding: $toolbar-search-matinfix-padding;
+      mat-icon.mat-icon {
+        margin: $toolbar-search-icon-margin;
+      }
+    }
+  }
+}
+/* @mixin toolbar-search-form() {
+  padding: $toolbar-search-form-padding;
+  line-height: $toolbar-search-form-line-height;
+  flex-grow: $toolbar-search-form-flex-grow;
+  border-color: $toolbar-search-form-border-color;
+}
+@mixin toolbar-search-outline() {
+  border-radius: $toolbar-search-outline-border-radius;
+  color: $toolbar-search-outline-color;
+  background: $toolbar-search-outline-background;
+}
+@mixin toolbar-search-matflex() {
+  height: $toolbar-search-matflex-height;
+  padding: $toolbar-search-matflex-padding;
+}
+@mixin toolbar-search-matwrapper() {
+  width: $toolbar-search-matwrapper-width;
+  padding-bottom: $toolbar-search-matwrapper-padding-bottom;
+  margin: $toolbar-search-matwrapper-margin;
+}
+@mixin toolbar-search-matinfix() {
+  display: $toolbar-search-matinfix-display;
+  padding: $toolbar-search-matinfix-padding;
+  margin: $toolbar-search-matinfix-icon-margin;
+} */
+div.search-container {
+  @include toolbar-search()
+}
+
+
+
+
+/******************************************************************************************************
 /*** Toolbar ***
 ******************************************************************************************************/
 
