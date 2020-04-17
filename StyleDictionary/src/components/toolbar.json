@@ -13,7 +13,7 @@
       "outline" : {
         "border-radius" : { "value" : "{spacing.xxxs.value}" },
         "color" : { "value" : "{color.neutral.00.value}" },
-        "background" : { "value" : "{color.neutral.01.value}" }
+        "background" : { "value" : "{color.neutral.00.value}" }
       },
       "placeholder" : {
         "color" : { "value" : "{color.neutral.03.value}" }

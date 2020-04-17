@@ -3412,7 +3412,7 @@ div.search-container .mat-form-field.search-form {
 div.search-container .mat-form-field.search-form .mat-form-field-outline {
   border-radius: 4px;
   color: #fcfcfd;
-  background: #eef2f5;
+  background: #fcfcfd;
 }
 
 div.search-container .mat-form-field.search-form .mat-input-element::-webkit-input-placeholder {
