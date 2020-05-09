@@ -13,7 +13,7 @@
       "width" : { "value" : "12px" },
       "line-height" : { "value" : "12px" },
       "background" : { "value" : "{color.positive.primary.value}" },
-      "position" : { "value" : "-1px" },
+      "position" : { "value" : "0" },
       "box-shadow" : { "value" : "inset 0 0 0 1px {color.brand.light.primary.value}" }
     },
     "item" : {

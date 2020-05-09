@@ -3441,11 +3441,11 @@ div.avatar-user img {
 }
 
 div.avatar-user.mat-badge-small.mat-badge-overlap.mat-badge-after span.mat-badge-content {
-  right: -1px;
+  right: 0;
 }
 
 div.avatar-user.mat-badge-small.mat-badge-below span.mat-badge-content {
-  bottom: -1px;
+  bottom: 0;
 }
 
 div.avatar-user span.mat-badge-content {
@@ -3459,6 +3459,8 @@ div.avatar-user span.mat-badge-content {
 
 div.avatar-user img {
   border-radius: 50%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 div.avatar-user:hover .avatar-hoverlay {
@@ -3501,11 +3503,11 @@ div.avatar-item img {
 }
 
 div.avatar-item.mat-badge-small.mat-badge-overlap.mat-badge-after span.mat-badge-content {
-  right: -1px;
+  right: 0;
 }
 
 div.avatar-item.mat-badge-small.mat-badge-below span.mat-badge-content {
-  bottom: -1px;
+  bottom: 0;
 }
 
 div.avatar-item span.mat-badge-content {

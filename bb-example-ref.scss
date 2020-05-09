@@ -749,6 +749,7 @@ div.avatar-user {
 
   img {
     border-radius: $avatar-border-radius;
+    box-sizing: border-box;
   }
   &:hover .avatar-hoverlay {
     display: flex;
