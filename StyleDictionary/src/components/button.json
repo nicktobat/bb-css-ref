@@ -49,7 +49,8 @@
             "display": { "value" : "flex" },
             "align-y" : { "value" : "center" },
             "margin" : { "value" : "{spacing.xxs.value}" },
-            "color" : { "value" : "{color.brand.blue.primary.value}" }
+            "color" : { "value" : "{color.brand.blue.primary.value}" },
+            "icon-lh" : { "value" : "22px" }
         },
         "toolbar" : {
             "font-weight" : { "value" : "{weight.font.regular.value}" },
